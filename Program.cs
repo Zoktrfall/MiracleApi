@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MiracleApi.Interfaces;
 using MiracleApi.Models;
+using MiracleApi.Repository;
 using MiracleApi.Service;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -85,6 +86,7 @@ builder.Services.AddAuthentication(options => {
 builder.Services.AddScoped<IStockRepository, StockRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IPortfolioRepository, PorfolioRepository>();
 
 var app = builder.Build();
 
